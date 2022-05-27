@@ -17,12 +17,12 @@
 # -- Project information -----------------------------------------------------
 # from gym import __version__ as gym_version
 
-project = "Gym"
+project = "Procgen"
 copyright = "2022"
 author = ""
 
 # The full version, including alpha/beta/rc tags
-release = 0.1
+release = "0.1"
 
 
 # -- General configuration ---------------------------------------------------
