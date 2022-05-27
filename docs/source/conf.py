@@ -15,7 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-from gym import __version__ as gym_version
+# from gym import __version__ as gym_version
 
 project = "Gym"
 copyright = "2022"
@@ -58,8 +58,8 @@ napoleon_custom_sections = [("Returns", "params_style")]
 # a list of builtin themes.
 #
 html_theme = "furo"
-html_title = "Gym Documentation"
-html_baseurl = "https://www.gymlibrary.ml"
+html_title = "Procgen Documentation"
+html_baseurl = "https://github.com/israelgonzalezb/procgen-docs"
 html_favicon = "_static/img/favicon.png"
 html_theme_options = {
     "light_logo": "img/gym_logo_black.svg",
