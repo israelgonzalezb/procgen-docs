@@ -22,7 +22,7 @@ copyright = "2022"
 author = ""
 
 # The full version, including alpha/beta/rc tags
-release = gym_version
+release = 0.1
 
 
 # -- General configuration ---------------------------------------------------
