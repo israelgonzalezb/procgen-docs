@@ -2,61 +2,39 @@
 hide-toc: true
 ---
 
-# Gym documentation
+# Procgen Benchmark
 
-## Gym is a standard API for reinforcement learning, and a diverse collection of reference environments.
+## [Blog Post](https://openai.com/blog/procgen-benchmark/) [Paper](https://arxiv.org/abs/1912.01588)
 
+16 simple-to-use procedurally-generated [gym](https://github.com/openai/gym) environments which provide a direct measure of how quickly a reinforcement learning agent learns generalizable skills.  The environments run at high speed (thousands of steps per second) on a single core.
 
-```{figure} https://user-images.githubusercontent.com/15806078/153222406-af5ce6f0-4696-4a24-a683-46ad4939170c.gif
-   :alt: Lunar Lander
+We ran a competition in 2020 which used these environments to measure sample efficiency and generalization in RL. You can learn more [here](https://www.aicrowd.com/challenges/neurips-2020-procgen-competition).
+
+```{figure} https://raw.githubusercontent.com/openai/procgen/master/screenshots/procgen.gif
+   :alt: Procgen
 ```
 
-**The Gym interface is simple, pythonic, and capable of representing general RL problems:**
+**These environments are associated with the paper [Leveraging Procedural Generation to Benchmark Reinforcement Learning](https://cdn.openai.com/procgen.pdf) [citation](#citation).  The code for running some experiments from the paper is in the [train-procgen](https://github.com/openai/train-procgen) repo.  For those familiar with the original [CoinRun environment](https://github.com/openai/coinrun), be sure to read the updated CoinRun description below as there have been subtle changes to the environment.**
 
-```{code-block} python
+Compared to [Gym Retro](https://github.com/openai/retro), these environments are:
 
-import gym
-env = gym.make("LunarLander-v2")
-observation, info = env.reset(seed=42, return_info=True)
-for _ in range(1000):
-   env.render()
-   action = policy(observation)  # User-defined policy function
-   observation, reward, done, info = env.step(action)
+* Faster: Gym Retro environments are already fast, but Procgen environments can run >4x faster.
+* Randomized: Gym Retro environments are always the same, so you can memorize a sequence of actions that will get the highest reward.  Procgen environments are randomized so this is not possible.
+* Customizable: If you install from source, you can perform experiments where you change the environments, or build your own environments.  The environment-specific code for each environment is often less than 300 lines.  This is almost impossible with Gym Retro.
 
-   if done:
-      observation, info = env.reset(return_info=True)
-env.close()
-``` 
+**Supported platforms:**
 
-```{toctree}
-:hidden:
-:caption: User Guide
+- Windows 10
+- macOS 10.14 (Mojave), 10.15 (Catalina)
+- Linux (manylinux2010)
 
-content/api
-content/environment_creation
-content/spaces
-content/vector_api
-content/tutorials
-content/wrappers
-Github <https://github.com/openai/gym>
-```
+**Supported Pythons:**
 
-```{toctree}
-:hidden:
-:caption: Environments
+- 3.7 64-bit
+- 3.8 64-bit
+- 3.9 64-bit
+- 3.10 64-bit
 
-environments/atari/index
-environments/mujoco/index
-environments/toy_text/index
-environments/classic_control/index
-environments/box2d/index
-environments/third_party_environments/index
-```
+**Supported CPUs:**
 
-```{toctree}
-:hidden:
-:caption: Development
-
-Contribute to the Docs <https://github.com/Farama-Foundation/gym-docs>
-
-```
+- Must have at least AVX
