@@ -14,7 +14,7 @@ We ran a competition in 2020 which used these environments to measure sample eff
    :alt: Procgen
 ```
 
-**These environments are associated with the paper [Leveraging Procedural Generation to Benchmark Reinforcement Learning](https://cdn.openai.com/procgen.pdf) [citation](#citation).  The code for running some experiments from the paper is in the [train-procgen](https://github.com/openai/train-procgen) repo.  For those familiar with the original [CoinRun environment](https://github.com/openai/coinrun), be sure to read the updated CoinRun description below as there have been subtle changes to the environment.**
+**These environments are associated with the paper [Leveraging Procedural Generation to Benchmark Reinforcement Learning](https://cdn.openai.com/procgen.pdf) [^citation].  The code for running some experiments from the paper is in the [train-procgen](https://github.com/openai/train-procgen) repo.  For those familiar with the original [CoinRun environment](https://github.com/openai/coinrun), be sure to read the updated CoinRun description below as there have been subtle changes to the environment.**
 
 Compared to [Gym Retro](https://github.com/openai/retro), these environments are:
 
@@ -38,3 +38,16 @@ Compared to [Gym Retro](https://github.com/openai/retro), these environments are
 **Supported CPUs:**
 
 - Must have at least AVX
+
+[citation]
+
+Please cite using the following bibtex entry:
+
+```
+@article{cobbe2019procgen,
+  title={Leveraging Procedural Generation to Benchmark Reinforcement Learning},
+  author={Cobbe, Karl and Hesse, Christopher and Hilton, Jacob and Schulman, John},
+  journal={arXiv preprint arXiv:1912.01588},
+  year={2019}
+}
+```
